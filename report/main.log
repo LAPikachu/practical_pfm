@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  17 MAY 2024 11:30
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  21 MAY 2024 18:25
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2195,10 +2195,22 @@ been already used, duplicate ignored
                    \relax 
 l.37 \newpage
               [1]
+Underfull \hbox (badness 10000) in paragraph at lines 55--56
 
-LaTeX Warning: Empty bibliography on input line 43.
+ []
 
-[2] (main.aux)
+[2{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm/lm-mathit.enc
+}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mnsymbol/MnSymbol
+D.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mnsymbol/MnS
+ymbolF.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mnsymbo
+l/MnSymbolE.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
+/lm-rm.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mnsymbo
+l/MnSymbolC.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mn
+symbol/MnSymbolA.enc}]
+
+LaTeX Warning: Empty bibliography on input line 80.
+
+[3] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2210,22 +2222,27 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45267 strings out of 474542
- 893545 string characters out of 5744919
- 1930978 words of memory out of 5000000
- 66787 multiletter control sequences out of 15000+600000
- 607644 words of font info for 105 fonts, out of 8000000 for 9000
+ 45300 strings out of 474542
+ 894124 string characters out of 5744919
+ 1939978 words of memory out of 5000000
+ 66798 multiletter control sequences out of 15000+600000
+ 607810 words of font info for 107 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,20n,110p,11002b,1864s stack positions out of 10000i,1000n,20000p,200000b,200000s
-<C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmbx12.pfb
-><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmcsco10.pf
-b><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr10.pfb>
-<C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.pfb><C
-:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pfb><C:/
-Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
-Output written on main.pdf (3 pages, 183199 bytes).
+ 113i,20n,110p,11002b,2058s stack positions out of 10000i,1000n,20000p,200000b,200000s
+<C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsymbol/MnSy
+mbol10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mbx12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+csco10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
+mmi10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+mi8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
+0.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.
+pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pf
+b><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><
+C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
+
+Output written on main.pdf (4 pages, 266198 bytes).
 PDF statistics:
- 63 PDF objects out of 1000 (max. 8388607)
- 5 named destinations out of 1000 (max. 500000)
- 26650 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 133 PDF objects out of 1000 (max. 8388607)
+ 16 named destinations out of 1000 (max. 500000)
+ 26658 words of extra memory for PDF output out of 29859 (max. 10000000)
 

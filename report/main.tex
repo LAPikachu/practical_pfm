@@ -36,9 +36,46 @@
 \tableofcontents
 \newpage
 \section{Introduction}
-Phase-field simulation is a versatile application in the toolbox of materials simulation. It is often used for simulations of phase transitions, dislocation evolution, fracture simulations etc. The following practicals aim is to get a practical introduction into the subject. In two separate tasks a 1D single-component solidification simulation and the calculation of a bulk energy density coefficient are going to be conducted. 
+Phase-field simulation is a versatile application in the toolbox of materials simulation. It is often used for simulations of phase transitions, dislocation evolution, fracture simulations etc. The following practicals aim is to get a practical introduction into the subject. In two separate tasks a 1D single-component solidification simulation, calculation of a bulk energy density coefficient and gradient energy density coefficient are going to be conducted. 
+
+\section{Task 1: 1D Single-Component Solidification}
+
+To simulate a 1D single-component solidification we utilize the following energy density:
+
+\begin{equation}
+	F = \int \bigl( f_{0} \phi^{2}(1- \phi)^{2}  + \frac{K_{\phi}}{2} \lvert \nabla \phi \rvert ^{2} \bigr) d \vec{r}
+\end{equation}
+
+As soldification is a a non-conservative process, the kinetics are governed by the Allen-Cahn equation (for the  homogeneous, isotropic case).
+
+\begin{equation}
+	\frac{\partial \phi}{\partial t} =-L \frac{\delta F}{\delta \phi} \label{eq:alle_cahn_homo_iso}
+\end{equation}
+
+Here the functional derivative \(\frac{\delta F}{\delta \phi}\) of an energy functional eq. \ref{eq:energy_functional_general} can be evaluated as eq. \ref{eq:func_derivative_general}.\\
 
 
+\begin{subequations}
+	\begin{align}
+		F =& \int f(\vec{r}, \phi, \nabla \phi) d\vec{r} \label{eq:energy_functional_general} \\
+		\frac{\delta F}{\delta \phi} =& \frac{\partial f}{ \partial \phi} - \nabla \cdot \frac{\partial f}{\partial (\nabla \phi)} \label{eq:func_derivative_general}
+		\end{align}
+\end{subequations}
+
+Solving the functional derivative from eq. \ref{eq:alle_cahn_homo_iso} yields:
+
+\begin{subequations}
+	\begin{align}
+		\frac{\delta F}{\delta \phi} =& 2 f_{0}\phi (1-\phi)^2 + 2 f_{0}\phi^{2} (\phi -1) - K_{\phi} \nabla^{2} \phi \Leftrightarrow \\
+		\Leftrightarrow  & 2 f_0 (2\phi^{3} -\phi^{2} + \phi) - K_{\phi} \nabla^{2} \phi 
+	\end{align}
+\end{subequations}
+
+Inserting the result into eq. \ref{eq:alle_cahn_homo_iso} results in:
+
+\begin{equation}
+	\frac{\partial \phi}{\partial t} = -L \bigl[ 2 f_0 (2\phi^{3} -\phi^{2} + \phi) - K_{\phi} \nabla^{2} \phi \bigr]
+\end{equation}
 %\listoffigures
 \printbibliography
 

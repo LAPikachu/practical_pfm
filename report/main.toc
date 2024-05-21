@@ -1,3 +1,4 @@
 \babel@toc {english}{}\relax 
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
+\contentsline {section}{\numberline {2}Task 1: 1D Single-Component Solidification}{2}{section.2}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 
