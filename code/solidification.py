@@ -1,10 +1,10 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-def f_density(x):
+def f_bulk(x):
     return (x**2)*(1-x)**2
 
-def df_density(x):
+def df_bulk(x):
     return 2*x*(1-x)**2 + 2*x**2 *(x-1)
 # Model parameters --------------------------------------------
 K_phi= 1  # gradient energy coefficient
@@ -24,27 +24,28 @@ t = np.linspace(0, steps*delta_t, N)
 
 
 # Initial condition -------------------------------------------
-psi0  = np.ones(N) # create & initialize psi0 array with -1
-psi0[N//2:] = 0.  # set psi0 to 1 for half of the domain
+phi0  = np.ones(N) # create & initialize phi0 array with -1
+phi0[N//2:] = 0.  # set phi0 to 1 for half of the domain
 
-psi  =  np.zeros(N) # the array for the update
+phi  =  np.zeros(N) # the array for the update
 
 
 # The time loop -----------------------------------------------
 for t in range(steps):
     for i in range(1,N-1):
-        tmp = -K_phi*(psi0[i+1] - 2*psi0[i] + psi0[i-1])/dx**2 + f_0*df_density(psi0[i])
-        psi[i] = psi0[i] - L*delta_t*tmp
+        f_tot = 0.5*K_phi
+        df_tot = -K_phi*(phi0[i+1] - 2*phi0[i] + phi0[i-1])/dx**2 + f_0*df_bulk(phi0[i])
+        phi[i] = phi0[i] - L*delta_t*df_tot
         
-        psi[0] = psi[1]     # Neumann condition at left
-        psi[N-1] = psi[N-2] # and right boundary
-    psi0 = np.copy(psi) # buffer actual time step
-    plt.plot(x,psi[:],'.') # just the final time step ...
+        phi[0] = phi[1]     # Neumann condition at left
+        phi[N-1] = phi[N-2] # and right boundary
+    phi0 = np.copy(phi) # buffer actual time step
+    plt.plot(x,phi[:],'.') # just the final time step ...
     plt.show()
 
     
 # Plot the result ---------------------------------------------
 
-plt.plot(x,psi[:],'.') # just the final time step ...
+plt.plot(x,phi[:],'.') # just the final time step ...
 plt.show()
 plt.show()
