@@ -74,5 +74,5 @@ if __name__ == '__main__':
         ax3.set_ylabel(r'$f_{tot}$')
         ax3.legend(loc='upper left')
         
-plt.savefig('report/graphics/solidification_vary_K.png')
+#plt.savefig('report/graphics/solidification_vary_K.png')
 plt.show()
