@@ -67,15 +67,60 @@ Solving the functional derivative from eq. \ref{eq:alle_cahn_homo_iso} yields:
 \begin{subequations}
 	\begin{align}
 		\frac{\delta F}{\delta \phi} =& 2 f_{0}\phi (1-\phi)^2 + 2 f_{0}\phi^{2} (\phi -1) - K_{\phi} \nabla^{2} \phi \Leftrightarrow \\
-		\Leftrightarrow  & 2 f_0 (2\phi^{3} -\phi^{2} + \phi) - K_{\phi} \nabla^{2} \phi 
+		\Leftrightarrow  & 2\phi^{3}  -4\phi^{2} + 2\phi
 	\end{align}
 \end{subequations}
 
 Inserting the result into eq. \ref{eq:alle_cahn_homo_iso} results in:
 
 \begin{equation}
-	\frac{\partial \phi}{\partial t} = -L \bigl[ 2 f_0 (2\phi^{3} -\phi^{2} + \phi) - K_{\phi} \nabla^{2} \phi \bigr]
+	\frac{\partial \phi}{\partial t} = -L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr]
 \end{equation}
+
+As the governing equation for solving the PDE we apply Dirichlet boundary conditions \(\phi_{1} = 0; \phi_{n}=1\) and discretize the partial derivative \(\frac{\partial \phi}{\partial t}\) as:
+
+\begin{subequations}
+	\begin{align}
+	\frac{\partial \phi}{\partial t}  \approx \frac{\phi_{next} - \phi}{\Delta t} &=  -L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr] \Leftrightarrow \\
+	\Leftrightarrow \phi_{next} & = -\Delta t L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr]
+    \end{align}
+\end{subequations}
+
+and \(\nabla^{2} \phi(x) \) is discretized according to the (forward) finite differences scheme:
+
+\begin{equation}
+	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+2}) - 2\phi(x_{i+1}) + \phi(x_{i}) }{\Delta x} 
+\end{equation}
+
+where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in \ref{fig:solidification_f0} \(f_{0}\) seems to be reciprocally proportional energy functional over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\), the energy or energy density - see fig. \ref{fig:solidification_L} .
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{solidification_initial.png}\label{fig:solidification_init}
+	\caption{Initial results of the 1D single-component solidification simulation.}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{solidification_vary_f0.png}\label{fig:solidification_f0}
+	\caption{Results of the 1D single-component solidification simulation with various \(f_{0}\) values.}
+\end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{solidification_vary_K.png}\label{fig:solidification_K}
+	\caption{Results of the 1D single-component solidification simulation with various K values.}
+\end{figure}
+
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{solidification_vary_L.png}\label{fig:solidification_L}
+	\caption{Results of the 1D single-component solidification simulation with various L values.}
+\end{figure}
+
+
 %\listoffigures
 \printbibliography
 

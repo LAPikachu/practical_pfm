@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  21 MAY 2024 18:25
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  23 MAY 2024 17:40
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2207,10 +2207,37 @@ l/MnSymbolE.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/lm
 /lm-rm.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mnsymbo
 l/MnSymbolC.enc}{C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/enc/dvips/mn
 symbol/MnSymbolA.enc}]
+<graphics/solidification_initial.png, id=61, 1084.05pt x 361.35pt>
+File: graphics/solidification_initial.png Graphic file (type png)
+<use graphics/solidification_initial.png>
+Package pdftex.def Info: graphics/solidification_initial.png  used on input lin
+e 100.
+(pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
+<graphics/solidification_vary_f0.png, id=63, 1084.05pt x 361.35pt>
+File: graphics/solidification_vary_f0.png Graphic file (type png)
+<use graphics/solidification_vary_f0.png>
+Package pdftex.def Info: graphics/solidification_vary_f0.png  used on input lin
+e 106.
+(pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
+<graphics/solidification_vary_K.png, id=64, 1084.05pt x 361.35pt>
+File: graphics/solidification_vary_K.png Graphic file (type png)
+<use graphics/solidification_vary_K.png>
+Package pdftex.def Info: graphics/solidification_vary_K.png  used on input line
+ 112.
+(pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
+<graphics/solidification_vary_L.png, id=65, 1084.05pt x 361.35pt>
+File: graphics/solidification_vary_L.png Graphic file (type png)
+<use graphics/solidification_vary_L.png>
+Package pdftex.def Info: graphics/solidification_vary_L.png  used on input line
+ 119.
+(pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
 
-LaTeX Warning: Empty bibliography on input line 80.
 
-[3] (main.aux)
+LaTeX Warning: Empty bibliography on input line 125.
+
+[3 <./graphics/solidification_initial.png>] [4 <./graphics/solidification_vary_
+f0.png> <./graphics/solidification_vary_K.png> <./graphics/solidification_vary_
+L.png>] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2222,27 +2249,28 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45300 strings out of 474542
- 894124 string characters out of 5744919
+ 45360 strings out of 474542
+ 895865 string characters out of 5744919
  1939978 words of memory out of 5000000
- 66798 multiletter control sequences out of 15000+600000
- 607810 words of font info for 107 fonts, out of 8000000 for 9000
+ 66841 multiletter control sequences out of 15000+600000
+ 608142 words of font info for 111 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,20n,110p,11002b,2058s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsymbol/MnSy
-mbol10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mbx12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-csco10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mmi10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
-mi8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr1
-0.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr12.
-pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr17.pf
-b><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr8.pfb><
-C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx10.pfb>
-
-Output written on main.pdf (4 pages, 266198 bytes).
+mbol10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsy
+mbol/MnSymbol8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmbx12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmcsco10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmmi10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
+ic/lm/lmmi8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public
+/lm/lmr10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmr12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/
+lmr17.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
+r8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssb
+x10.pfb>
+Output written on main.pdf (5 pages, 464112 bytes).
 PDF statistics:
- 133 PDF objects out of 1000 (max. 8388607)
- 16 named destinations out of 1000 (max. 500000)
- 26658 words of extra memory for PDF output out of 29859 (max. 10000000)
+ 165 PDF objects out of 1000 (max. 8388607)
+ 25 named destinations out of 1000 (max. 500000)
+ 26678 words of extra memory for PDF output out of 29859 (max. 10000000)
 
