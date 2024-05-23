@@ -16,7 +16,7 @@ def gradient(mat, dx):
 
 # paprameters
 f_0_list = [1.0, 0.1, 0.01] 
-K_list = [1.0, 10.0, 100.0]
+K_list = [0.1, 1.0, 10.0, 20.0]
 L_list = [1.0, 0.1, 10.0]
 N = 1001
 x = np.linspace(0, 100, N)
@@ -44,10 +44,10 @@ if __name__ == '__main__':
     fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 5))   
     for j in range(len(L_list)): #set index of param to vary over to [j]
         f_0 = f_0_list[0]
-        K = K_list[j]
-        L = L_list[0]
+        K = K_list[0]
+        L = L_list[j]
         dt = 0.5 * dx**2/(2*L*K)
-        marks_list = ['-', '--', '-.'] # different mark for every loop
+        marks_list = ['-', '--', '-.', ':'] # different mark for every loop
 
         phi_0 = np.zeros(N)
         dphi_dt = np.zeros(N)
@@ -58,21 +58,21 @@ if __name__ == '__main__':
         
         
         #Plot 1
-        ax1.plot(x, phi_next, marks_list[j] ,label='$f_0$= {}'.format(f_0))
+        ax1.plot(x, phi_next, marks_list[j] ,label='L= {}'.format(L))
         ax1.set_xlabel('x')
         ax1.set_ylabel(r'$\phi$')
         ax1.legend()
         #Plot 2
-        ax2.plot(t, F, marks_list[j], label='$f_0$= {}'.format(f_0))
+        ax2.plot(t, F, marks_list[j], label='L= {}'.format(L))
         ax2.set_yscale("log")
         ax2.set_xlabel('t')
         ax2.set_ylabel('F')
         ax2.legend()
         #Plot 3
-        ax3.plot(x, f,marks_list[j], label='$f_0$= {}'.format(f_0))
+        ax3.plot(x, f,marks_list[j], label='L= {}'.format(L))
         ax3.set_xlabel('X')
         ax3.set_ylabel(r'$f_{tot}$')
         ax3.legend(loc='upper left')
         
-#plt.savefig('report/graphics/solidification_vary_K.png')
+plt.savefig('report/graphics/solidification_vary_L.png')
 plt.show()
