@@ -16,5 +16,71 @@
   {}
 \endgroup
 
+
+\refsection{0}
+  \datalist[entry]{none/global//global/global}
+    \entry{zhu2002}{article}{}
+      \name{author}{4}{}{%
+        {{hash=fef3dbba67e95b4c57579394e390b1db}{%
+           family={Zhu},
+           familyi={Z\bibinitperiod},
+           given={J.\bibnamedelimi Z},
+           giveni={J\bibinitperiod\bibinitdelim Z\bibinitperiod}}}%
+        {{hash=bfa5255348629d44e0dcefa46790861c}{%
+           family={Liu},
+           familyi={L\bibinitperiod},
+           given={Z.\bibnamedelimi K},
+           giveni={Z\bibinitperiod\bibinitdelim K\bibinitperiod}}}%
+        {{hash=4b194f8ac9edad1d16c5bb5648730bc5}{%
+           family={Vaithyanathan},
+           familyi={V\bibinitperiod},
+           given={V},
+           giveni={V\bibinitperiod}}}%
+        {{hash=baa1c545061d4f21a48b5c8f1dbb192b}{%
+           family={Chen},
+           familyi={C\bibinitperiod},
+           given={L.\bibnamedelimi Q},
+           giveni={L\bibinitperiod\bibinitdelim Q\bibinitperiod}}}%
+      }
+      \strng{namehash}{bc28dda1b2ff37ccdc2ac1cdfcc396cc}
+      \strng{fullhash}{ef7870c9171364dfd4cb1e6dd0d4c880}
+      \strng{bibnamehash}{ef7870c9171364dfd4cb1e6dd0d4c880}
+      \strng{authorbibnamehash}{ef7870c9171364dfd4cb1e6dd0d4c880}
+      \strng{authornamehash}{bc28dda1b2ff37ccdc2ac1cdfcc396cc}
+      \strng{authorfullhash}{ef7870c9171364dfd4cb1e6dd0d4c880}
+      \field{sortinit}{1}
+      \field{sortinithash}{4f6aaa89bab872aa0999fec09ff8e98a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{shorttitle}
+      \field{day}{11}
+      \field{issn}{1359-6462}
+      \field{journaltitle}{Scripta Materialia}
+      \field{month}{3}
+      \field{number}{5}
+      \field{shortjournal}{Scripta Materialia}
+      \field{shorttitle}{Linking Phase-Field Model to {{CALPHAD}}}
+      \field{title}{Linking Phase-Field Model to {{CALPHAD}}: Application to Precipitate Shape Evolution in {{Ni-base}} Alloys}
+      \field{urlday}{25}
+      \field{urlmonth}{5}
+      \field{urlyear}{2024}
+      \field{volume}{46}
+      \field{year}{2002}
+      \field{dateera}{ce}
+      \field{urldateera}{ce}
+      \field{pages}{401\bibrangedash 406}
+      \range{pages}{6}
+      \verb{doi}
+      \verb 10.1016/S1359-6462(02)00013-1
+      \endverb
+      \verb{urlraw}
+      \verb https://www.sciencedirect.com/science/article/pii/S1359646202000131
+      \endverb
+      \verb{url}
+      \verb https://www.sciencedirect.com/science/article/pii/S1359646202000131
+      \endverb
+      \keyw{CALPHAD,Computer simulation,Microstructure,Ni-base alloys,Phase field}
+    \endentry
+  \enddatalist
+\endrefsection
 \endinput
 
