@@ -80,6 +80,26 @@
       \endverb
       \keyw{CALPHAD,Computer simulation,Microstructure,Ni-base alloys,Phase field}
     \endentry
+    \entry{zaisera}{misc}{}
+      \name{author}{1}{}{%
+        {{hash=42a9d3f2abfc30a0daf5677cf3a50caf}{%
+           family={Zaiser},
+           familyi={Z\bibinitperiod},
+           given={Michael},
+           giveni={M\bibinitperiod}}}%
+      }
+      \strng{namehash}{42a9d3f2abfc30a0daf5677cf3a50caf}
+      \strng{fullhash}{42a9d3f2abfc30a0daf5677cf3a50caf}
+      \strng{bibnamehash}{42a9d3f2abfc30a0daf5677cf3a50caf}
+      \strng{authorbibnamehash}{42a9d3f2abfc30a0daf5677cf3a50caf}
+      \strng{authornamehash}{42a9d3f2abfc30a0daf5677cf3a50caf}
+      \strng{authorfullhash}{42a9d3f2abfc30a0daf5677cf3a50caf}
+      \field{sortinit}{2}
+      \field{sortinithash}{8b555b3791beccb63322c22f3320aa9a}
+      \field{labelnamesource}{author}
+      \field{labeltitlesource}{title}
+      \field{title}{Phase-Field Method: Basics and Application in Materials Science}
+    \endentry
   \enddatalist
 \endrefsection
 \endinput

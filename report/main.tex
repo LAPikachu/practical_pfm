@@ -121,13 +121,32 @@ where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is t
 \end{figure}
 
 \section{Task 2}
-The equilibrium Al concentration of the disordered \(\gamma \)-Phase has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase has been determined to be 0.230 \cite{zhu2002}.
+The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma}^{e}\) has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase \(c_{\gamma '}^{e}\) has been determined to be 0.230 \cite{zhu2002}. The bulk energy density function is constructed as:
+
+\begin{equation}
+	f_{bulk} = f_{0} (c_{\gamma '}^{e} - c)^{2}(c_{\gamma}^{e} - c)^{2} \label{eq:f_bulk_NiAl}
+\end{equation}
+
+The \( f_{0}\) needs to be fitted so that it results in an energy gradient of \(\Delta f 149 \frac{\mathrm{J}}{\mathrm{mol}} \) \cite{zaisera}. This is accomplished by choosing the right \(f_{0}\) to reach the right value at the local maximum of eq. \ref{eq:f_bulk_NiAl}. The local maximum of the function can be found automatically by finding the second root of the derivative of eq. \ref{eq:f_bulk_NiAl}:
+
+\begin{equation}
+	\frac{df_{bulk}}{dc} = -2 f_{0} (c_{\gamma '}^{e} - c)(c - c_{\gamma}^{e})^{2} + 2 f_{0} (c_{\gamma '}^{e} - c)^{2}(c - c_{\gamma}^{e})
+\end{equation}
+
+Using the \code{scipy} package of Python this can be achieved using \code{scipy.optimize.root\_scalar(func, x0=0.2)} where 0.2 is the initial starting point, looking for \(c_{max}\). Here \(c_{max}\) is found at 0.1975. Solving \ref{eq:f_bulk_NiAl} for \(f_{0}\) results in a value of \(\approx 133.6 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}}\).  The resulting function of the corresponding parameters is plotted in \ref{fig:alni_fitted}.
+
 
 \begin{figure}[htb]
 	\centering\includegraphics[width=\textwidth]{NiAl_gibbs_free_energy.png}\label{fig:AlNi_gibbs}
-	\caption{Calculated chemical free energy as a function of composition for both the disordered and ordered phase at 1300 K reproduced from \cite{zhu2002}.}
-	
+	\caption{Calculated chemical free energy as a function of composition for both the disordered and ordered phase at 1300 K reproduced from \cite{zhu2002}.} 
 \end{figure}
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{alni_fitted.png}\label{fig:alni_fitted}
+	\caption{Plot of bulk energy of binary NiAl mixture with \(c_{\gamma}^{e} = 0.165\),  \(c_{\gamma '}^{e} = 0.23\) and \(f_{0} = 133.6 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}} \).}
+\end{figure}
+
 %\listoffigures
 \printbibliography
 

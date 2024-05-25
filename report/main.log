@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  25 MAY 2024 11:58
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  25 MAY 2024 23:21
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2234,17 +2234,8 @@ Package pdftex.def Info: graphics/solidification_vary_L.png  used on input line
  [3 <./graphics/solidification_initial.png>] [4 <./graphics/solidification_vary
 _f0.png> <./graphics/solidification_vary_K.png> <./graphics/solidification_vary
 _L.png>]
-<graphics/NiAl_gibbs_free_energy.png, id=92, 2192.19pt x 1955.80687pt>
-File: graphics/NiAl_gibbs_free_energy.png Graphic file (type png)
-<use graphics/NiAl_gibbs_free_energy.png>
-Package pdftex.def Info: graphics/NiAl_gibbs_free_energy.png  used on input lin
-e 127.
-(pdftex.def)             Requested size: 418.25368pt x 373.12917pt.
-Package microtype Info: Character `029' is missing
-(microtype)             in font `T1/lmr/m/sc/10.95'.
-(microtype)             Ignoring protrusion settings for this character.
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-32.
+36.
 
 (C:\Users\Leon\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
@@ -2253,9 +2244,33 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             `lmtt' (encoding: T1).
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
- [5
 
- <./graphics/NiAl_gibbs_free_energy.png>] [6] (main.aux)
+Overfull \hbox (48.6201pt too wide) in paragraph at lines 136--137
+[]\T1/lmr/m/n/10.95 (-20) Using the \T1/lmtt/m/n/10.95 scipy \T1/lmr/m/n/10.95 
+(-20) pack-age of Python this can be achieved us-ing \T1/lmtt/m/n/10.95 scipy.o
+ptimize.root_scalar(func,
+ []
+
+<graphics/NiAl_gibbs_free_energy.png, id=97, 2192.19pt x 1955.80687pt>
+File: graphics/NiAl_gibbs_free_energy.png Graphic file (type png)
+<use graphics/NiAl_gibbs_free_energy.png>
+Package pdftex.def Info: graphics/NiAl_gibbs_free_energy.png  used on input lin
+e 140.
+(pdftex.def)             Requested size: 418.25368pt x 373.12917pt.
+<graphics/alni_fitted.png, id=100, 462.528pt x 346.896pt>
+File: graphics/alni_fitted.png Graphic file (type png)
+<use graphics/alni_fitted.png>
+Package pdftex.def Info: graphics/alni_fitted.png  used on input line 146.
+(pdftex.def)             Requested size: 418.25368pt x 313.70677pt.
+[5
+
+] [6 <./graphics/NiAl_gibbs_free_energy.png>] [7 <./graphics/alni_fitted.png>]
+Package microtype Info: Character `029' is missing
+(microtype)             in font `T1/lmr/m/sc/10.95'.
+(microtype)             Ignoring protrusion settings for this character.
+ [8
+
+] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2267,32 +2282,33 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45670 strings out of 474542
- 901952 string characters out of 5744919
+ 45697 strings out of 474542
+ 902499 string characters out of 5744919
  1939978 words of memory out of 5000000
- 67120 multiletter control sequences out of 15000+600000
- 619413 words of font info for 124 fonts, out of 8000000 for 9000
+ 67135 multiletter control sequences out of 15000+600000
+ 619662 words of font info for 127 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,20n,110p,11002b,2058s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsymbol/MnSy
 mbol10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsy
-mbol/MnSymbol8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/pub
-lic/lm/lmbx10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmbx12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmcsc10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmcsco10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publ
-ic/lm/lmmi10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publi
-c/lm/lmmi8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/
-lm/lmr10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
-/lmr12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/l
-mr17.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmr
-8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmri10
-.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmssbx1
-0.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lmtt10
-.pfb>
-Output written on main.pdf (7 pages, 636349 bytes).
+mbol/MnSymbol6.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/mnsymbol/MnSymbol8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/t
+ype1/public/lm/lmbx10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmbx12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmcsc10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmcsco10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/ty
+pe1/public/lm/lmmi10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/typ
+e1/public/lm/lmmi8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1
+/public/lm/lmr10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/p
+ublic/lm/lmr12.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/pub
+lic/lm/lmr17.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/publi
+c/lm/lmr8.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmri10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm
+/lmssbx10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/l
+m/lmtt10.pfb>
+Output written on main.pdf (9 pages, 668422 bytes).
 PDF statistics:
- 211 PDF objects out of 1000 (max. 8388607)
- 31 named destinations out of 1000 (max. 500000)
- 33347 words of extra memory for PDF output out of 35830 (max. 10000000)
+ 238 PDF objects out of 1000 (max. 8388607)
+ 37 named destinations out of 1000 (max. 500000)
+ 33352 words of extra memory for PDF output out of 35830 (max. 10000000)
 
