@@ -9,9 +9,9 @@ def f_bulk(x):
 def df_bulkdx(x):
     return 2*x - 6*x**2 + 4*x**3
 
-def gradient(mat, dx):
-    tmp = np.copy(mat)
-    tmp[1:-1] = (mat[:-2] + mat[2:] - 2 * mat[1:-1]) / dx**2
+def div_gradient(x, dx):
+    tmp = np.copy(x)
+    tmp[1:-1] = (x[:-2] + x[2:] - 2 * x[1:-1]) / dx**2
     return tmp
 
 # paprameters
@@ -32,7 +32,7 @@ def implicit_euler(phi_0, f_0, K, L, dt):
     for i in range(timesteps):
         f[1:-1] = f_0 * f_bulk(phi_0[1:-1]) + K/2 * ((phi_0[2:] - phi_0[:-2])/(2*dx))**2
         F[i] = np.trapz(f, x=x)  
-        dphi_dt[1:-1] = K * gradient(phi_0, dx)[1:-1] - f_0 * df_bulkdx(phi_0[1:-1])
+        dphi_dt[1:-1] = K * div_gradient(phi_0, dx)[1:-1] - f_0 * df_bulkdx(phi_0[1:-1])
         phi_next[1:-1] = phi_0[1:-1] + L * dt * dphi_dt[1:-1]
         phi_next[0] = phi_next[1]
         phi_next[-1] = phi_next[-2]
