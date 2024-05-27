@@ -38,7 +38,7 @@
 \section{Introduction}
 Phase-field simulation is a versatile application in the toolbox of materials simulation. It is often used for simulations of phase transitions, dislocation evolution, fracture simulations etc. The following practicals aim is to get a practical introduction into the subject. In two separate tasks a 1D single-component solidification simulation, calculation of a bulk energy density coefficient and gradient energy density coefficient are going to be conducted. 
 
-\section{Task 1: 1D Single-Component Solidification}
+\section{Task 1: 1D Single-Component Solidification} \label{sec:task1}
 
 To simulate a 1D single-component solidification we utilize the following energy density:
 
@@ -67,7 +67,7 @@ Solving the functional derivative from eq. \ref{eq:alle_cahn_homo_iso} yields:
 \begin{subequations}
 	\begin{align}
 		\frac{\delta F}{\delta \phi} =& 2 f_{0}\phi (1-\phi)^2 + 2 f_{0}\phi^{2} (\phi -1) - K_{\phi} \nabla^{2} \phi \Leftrightarrow \\
-		\Leftrightarrow  & 2\phi^{3}  -4\phi^{2} + 2\phi
+		\Leftrightarrow  & 2\phi^{3}  -4\phi^{2} + 2\phi - K_{\phi} \nabla^{2} \phi
 	\end{align}
 \end{subequations}
 
@@ -89,7 +89,7 @@ As the governing equation for solving the PDE we apply Dirichlet boundary condit
 and \(\nabla^{2} \phi(x) \) is discretized according to the (forward) finite differences scheme:
 
 \begin{equation}
-	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+2}) - 2\phi(x_{i+1}) + \phi(x_{i}) }{\Delta x} 
+	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+2}) - 2\phi(x_{i+1}) + \phi(x_{i}) }{\Delta x^{2}} \label{eq:forward_euler_second_derivative}
 \end{equation}
 
 where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in \ref{fig:solidification_f0} \(f_{0}\) seems to be reciprocally proportional energy functional over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\), the energy or energy density - see fig. \ref{fig:solidification_L} .
@@ -120,7 +120,7 @@ where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is t
 	\caption{Results of the 1D single-component solidification simulation with various L values.}
 \end{figure}
 
-\section{Task 2}
+\section{Task 2: Determination of \(f_{0}\)}
 The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma}^{e}\) has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase \(c_{\gamma '}^{e}\) has been determined to be 0.230 \cite{zhu2002}. The bulk energy density function is constructed as:
 
 \begin{equation}
@@ -147,7 +147,35 @@ Using the \code{scipy} package of Python this can be achieved using \code{scipy.
 	\caption{Plot of bulk energy of binary NiAl mixture with \(c_{\gamma}^{e} = 0.165\),  \(c_{\gamma '}^{e} = 0.23\) and \(f_{0} = 133.6 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}} \).}
 \end{figure}
 
+\section{Task 3: Determination of \(K_{c}\) }
+In this task the gradient energy density coefficient of a binary NiAl-system is calculated. Apart from the governing equation being the Cahn-Hillard equation (eq. \ref{eq:cahn_hillard} ) as we are dealing with a conserved field, the general algorithm is similar to sec. \ref{sec:task1}. 
+
+\begin{equation}
+	\frac{ \partial c}{ \partial t} = M \nabla^{2} \frac{\delta F}{\delta c} \label{eq:cahn_hillard}
+\end{equation} 
+
+The functional for the binary system is evaluated as follows:
+
+\begin{equation}
+	\frac{\delta F}{\delta c} = 2 f_{0}(c_{\gamma '} - c )(c - c_{\gamma})^2 + 2 f_{0} (c - c_{\gamma})(c_{\gamma '} - c )^{2} - K_{c} \nabla^{2} c  \label{eq:functional_NiAl}
+\end{equation}
+		
+\(\nabla^{2}(\cdot)\) is (both in eq. \ref{eq:functional_NiAl} and eq. \ref{eq:cahn_hillard}) is discretized as in sec. \ref{sec:task1} eq. \ref{eq:forward_euler_second_derivative}.  The following coefficients are used molar Volumen \(V_{m} = 10^{-5} \frac{m^{3}}{mol}\), interface mobility \(M = 10^{-17} \frac{mol^{2}}{J m s}\), length segment \(dx = 10^{-8} m\), \(f_{0} = 134 \cdot 10^{6} \frac{J}{mol}\) and a experimental interface energy of \( F_{inte} = 5 \sim 50 \cdot 10^{-3} \frac{J}{m}\). 
+
+As M is function of molar quantity of substance for calculating the energy we have to add define an adjusted \( M_{new} = M * V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{ine} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
+
+\begin{figure}[htb]
+	\centering
+	\includegraphics[width=\textwidth]{find_K_grad_energy_density.png} \label{fig:vary_K}
+	\caption{Results of the conserved binary NiAl-system simulation with various \(K_{c}\) values.}
+\end{figure}
+
+
+
+
 %\listoffigures
 \printbibliography
+
+
 
 \end{document}
