@@ -11,11 +11,6 @@ def div_grad_1D(x, dx):
     tmp[1:-1] = (x[:-2] + x[2:] - 2 * x[1:-1]) / dx**2
     return tmp
 
-def div_grad_2D(c0, dx):
-    tmp = np.copy(c0)
-    tmp[1:-1, 1:-1] = (c0[1:-1,:-2] + c0[1:-1,2:] - 4*c0[1:-1,1:-1] +c0[:-2,1:-1] + c0[2:,1:-1])/dx**2
-    return tmp
-
 def bulk_NiAl(x,c1, c2):
     return (c2 - x)**2 * (x - c1)**2
 
@@ -23,18 +18,18 @@ def dbulk_dx(x, c1, c2):
     return ((c2 - x) *(x- c1)**2) +((x - c1)*(c2 - x)**2) 
 
 f_0_mol = 134e6
-V_mol = 1e-5 # mol^2 / Jms
-f_0 = f_0_mol * V_mol 
+V_mol = 1e-5 
+f_0 = f_0_mol 
 num_K = 10
-K_list = np.linspace(1e-6, 3e-6, num_K, dtype=np.float64)
-M = 1.0e-17 * (V_mol**2)
+K_list = np.linspace(1e-5, 3e-7, num_K, dtype=np.float64)
+M = 1.0e-17 * (V_mol**2)# mol^2 / Jms * (m**3/mol)
 dt = 0.1
 dx = 1.0e-8
-N = 500
+N = 100
 c1 = 0.165
 c2 = 0.23
 x = np.linspace(0, 1.0e-8*N, N, dtype=np.float64)
-timesteps = 2000
+timesteps = 3000
 t = np.linspace(0, timesteps -1, timesteps)
 F = np.zeros(timesteps, dtype=np.float64)
 dc_dt =  np.zeros(N, dtype=np.float64)
@@ -75,6 +70,6 @@ if __name__ == '__main__':
         ax3.legend()
         ax3.set_xlabel('x')
         ax3.set_ylabel(r'f in $\frac{J}{mol}$')
-    plt.savefig('report/graphics/find_K_grad_energy_density.png')
+    #plt.savefig('report/graphics/find_K_grad_energy_density.png')
     plt.show()
     print("cutoff prevention")
