@@ -51,7 +51,7 @@ def run_sim( f_0, K, M, dt, c1, c2):
     return c_next, F, f_inter
 
 if __name__ == '__main__':
-    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(25, 5)) 
+    fig, (ax1, ax2, ax3) = plt.subplots(1, 3, figsize=(15, 5)) 
     plt.rcParams['text.usetex'] = True
     plt.rcParams['figure.constrained_layout.use'] = True
     for K in K_list:
@@ -70,6 +70,6 @@ if __name__ == '__main__':
         ax3.legend()
         ax3.set_xlabel('x')
         ax3.set_ylabel(r'f in $\frac{J}{mol}$')
-    #plt.savefig('report/graphics/find_K_grad_energy_density.png')
+    plt.savefig('report/graphics/find_K_grad_energy_density.png')
     plt.show()
     print("cutoff prevention")

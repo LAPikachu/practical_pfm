@@ -2,5 +2,5 @@
 \contentsline {section}{\numberline {1}Introduction}{2}{section.1}%
 \contentsline {section}{\numberline {2}Task 1: 1D Single-Component Solidification}{2}{section.2}%
 \contentsline {section}{\numberline {3}Task 2: Determination of \(f_{0}\)}{5}{section.3}%
-\contentsline {section}{\numberline {4}Task 3: Determination of \(K_{c}\)}{8}{section.4}%
+\contentsline {section}{\numberline {4}Task 3: Determination of \(K_{c}\)}{6}{section.4}%
 \providecommand \tocbasic@end@toc@file {}\tocbasic@end@toc@file 

@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  28 MAY 2024 11:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  28 MAY 2024 13:39
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2217,71 +2217,71 @@ e 100.
 File: graphics/solidification_vary_f0.png Graphic file (type png)
 <use graphics/solidification_vary_f0.png>
 Package pdftex.def Info: graphics/solidification_vary_f0.png  used on input lin
-e 106.
+e 107.
 (pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
 <graphics/solidification_vary_K.png, id=70, 1084.05pt x 361.35pt>
 File: graphics/solidification_vary_K.png Graphic file (type png)
 <use graphics/solidification_vary_K.png>
 Package pdftex.def Info: graphics/solidification_vary_K.png  used on input line
- 112.
+ 114.
 (pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
 <graphics/solidification_vary_L.png, id=71, 1084.05pt x 361.35pt>
 File: graphics/solidification_vary_L.png Graphic file (type png)
 <use graphics/solidification_vary_L.png>
 Package pdftex.def Info: graphics/solidification_vary_L.png  used on input line
- 119.
+ 122.
 (pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
  [3 <./graphics/solidification_initial.png>]
 [4 <./graphics/solidification_vary_f0.png> <./graphics/solidification_vary_K.pn
 g> <./graphics/solidification_vary_L.png>]
 Package microtype Info: Fixing zero \fontdimen 6 for font `OMX/MnSymbolE/m/n/14
 .4'
-(microtype)             (new value: 14.4pt) on input line 123.
+(microtype)             (new value: 14.4pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `OMX/MnSymbolE/m/n/10
 '
-(microtype)             (new value: 10.0pt) on input line 123.
+(microtype)             (new value: 10.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `OMX/MnSymbolE/m/n/7'
 
-(microtype)             (new value: 7.0pt) on input line 123.
+(microtype)             (new value: 7.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolA/m/n/14.4
 '
-(microtype)             (new value: 14.4pt) on input line 123.
+(microtype)             (new value: 14.4pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolA/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 123.
+(microtype)             (new value: 10.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolA/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 123.
+(microtype)             (new value: 7.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolB/m/n/14.4
 '
-(microtype)             (new value: 14.4pt) on input line 123.
+(microtype)             (new value: 14.4pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolB/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 123.
+(microtype)             (new value: 10.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolB/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 123.
+(microtype)             (new value: 7.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolC/m/n/14.4
 '
-(microtype)             (new value: 14.4pt) on input line 123.
+(microtype)             (new value: 14.4pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolC/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 123.
+(microtype)             (new value: 10.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolC/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 123.
+(microtype)             (new value: 7.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolD/m/n/14.4
 '
-(microtype)             (new value: 14.4pt) on input line 123.
+(microtype)             (new value: 14.4pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolD/m/n/10'
-(microtype)             (new value: 10.0pt) on input line 123.
+(microtype)             (new value: 10.0pt) on input line 127.
 Package microtype Info: Fixing zero \fontdimen 6 for font `U/MnSymbolD/m/n/7'
-(microtype)             (new value: 7.0pt) on input line 123.
+(microtype)             (new value: 7.0pt) on input line 127.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 123.
+(hyperref)                removing `math shift' on input line 127.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 123.
+(hyperref)                removing `subscript' on input line 127.
 
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-36.
+40.
 (C:\Users\Leon\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
 File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
 )
@@ -2290,53 +2290,51 @@ Package microtype Info: Loading generic protrusion settings for font family
 (microtype)             For optimal results, create family-specific settings.
 (microtype)             See the microtype manual for details.
 
-Overfull \hbox (48.6201pt too wide) in paragraph at lines 136--137
+Overfull \hbox (48.6201pt too wide) in paragraph at lines 140--141
 []\T1/lmr/m/n/10.95 (-20) Using the \T1/lmtt/m/n/10.95 scipy \T1/lmr/m/n/10.95 
 (-20) pack-age of Python this can be achieved us-ing \T1/lmtt/m/n/10.95 scipy.o
 ptimize.root_scalar(func,
  []
 
-<graphics/NiAl_gibbs_free_energy.png, id=100, 2192.19pt x 1955.80687pt>
+<graphics/NiAl_gibbs_free_energy.png, id=101, 2192.19pt x 1955.80687pt>
 File: graphics/NiAl_gibbs_free_energy.png Graphic file (type png)
 <use graphics/NiAl_gibbs_free_energy.png>
 Package pdftex.def Info: graphics/NiAl_gibbs_free_energy.png  used on input lin
-e 140.
-(pdftex.def)             Requested size: 418.25368pt x 373.12917pt.
-<graphics/alni_fitted.png, id=103, 462.528pt x 346.896pt>
+e 144.
+(pdftex.def)             Requested size: 209.12683pt x 186.54967pt.
+<graphics/alni_fitted.png, id=104, 462.528pt x 346.896pt>
 File: graphics/alni_fitted.png Graphic file (type png)
 <use graphics/alni_fitted.png>
-Package pdftex.def Info: graphics/alni_fitted.png  used on input line 146.
+Package pdftex.def Info: graphics/alni_fitted.png  used on input line 151.
 (pdftex.def)             Requested size: 418.25368pt x 313.70677pt.
 [5
 
-] [6 <./graphics/NiAl_gibbs_free_energy.png>] [7 <./graphics/alni_fitted.png>]
+ <./graphics/NiAl_gibbs_free_energy.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 150.
+(hyperref)                removing `math shift' on input line 156.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 150.
+(hyperref)                removing `subscript' on input line 156.
 
-<graphics/find_K_grad_energy_density.png, id=134, 1806.75pt x 361.35pt>
+[6 <./graphics/alni_fitted.png>]
+<graphics/find_K_grad_energy_density.png, id=133, 1084.05pt x 361.35pt>
 File: graphics/find_K_grad_energy_density.png Graphic file (type png)
 <use graphics/find_K_grad_energy_density.png>
 Package pdftex.def Info: graphics/find_K_grad_energy_density.png  used on input
- line 168.
-(pdftex.def)             Requested size: 418.25368pt x 83.6491pt.
-[8
-
- <./graphics/find_K_grad_energy_density.png>]
-<graphics/NiAl_2D.png, id=147, 1806.75pt x 361.35pt>
+ line 174.
+(pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
+<graphics/NiAl_2D.png, id=136, 2890.8pt x 722.7pt>
 File: graphics/NiAl_2D.png Graphic file (type png)
 <use graphics/NiAl_2D.png>
-Package pdftex.def Info: graphics/NiAl_2D.png  used on input line 182.
-(pdftex.def)             Requested size: 418.25368pt x 83.6491pt.
+Package pdftex.def Info: graphics/NiAl_2D.png  used on input line 188.
+(pdftex.def)             Requested size: 418.25368pt x 104.56274pt.
+ [7 <./graphics/find_K_grad_energy_density.png>]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [9 <./graphics/NiAl_2D.png>]
-(main.aux)
+ [8 <./graphics/NiAl_2D.png>] (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
 L3 programming layer <2024-01-22>
@@ -2348,11 +2346,11 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45821 strings out of 474542
- 904897 string characters out of 5744919
+ 45828 strings out of 474542
+ 904975 string characters out of 5744919
  1939978 words of memory out of 5000000
  67220 multiletter control sequences out of 15000+600000
- 637023 words of font info for 165 fonts, out of 8000000 for 9000
+ 637355 words of font info for 169 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  113i,20n,110p,11002b,2125s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsymbol/MnSy
@@ -2374,9 +2372,9 @@ ic/lm/lmr17.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public
 ri10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
 sbx10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
 tt10.pfb>
-Output written on main.pdf (10 pages, 960348 bytes).
+Output written on main.pdf (9 pages, 972518 bytes).
 PDF statistics:
- 279 PDF objects out of 1000 (max. 8388607)
- 44 named destinations out of 1000 (max. 500000)
+ 274 PDF objects out of 1000 (max. 8388607)
+ 43 named destinations out of 1000 (max. 500000)
  39514 words of extra memory for PDF output out of 42996 (max. 10000000)
 

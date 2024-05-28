@@ -14,7 +14,7 @@ def div_gradient(x, dx):
     tmp[1:-1] = (x[:-2] + x[2:] - 2 * x[1:-1]) / dx**2
     return tmp
 
-# paprameters
+# parameters
 f_0_list = [1.0, 0.1, 0.01] 
 K_list = [0.1, 1.0, 10.0, 20.0]
 L_list = [1.0, 0.1, 10.0]
@@ -27,7 +27,7 @@ f = np.zeros(N)
 F = np.zeros(timesteps)
 
 # implicit euler 
-def implicit_euler(phi_0, f_0, K, L, dt):
+def run_sim(phi_0, f_0, K, L, dt):
     phi_next = np.copy(phi_0)
     for i in range(timesteps):
         f[1:-1] = f_0 * f_bulk(phi_0[1:-1]) + K/2 * ((phi_0[2:] - phi_0[:-2])/(2*dx))**2
@@ -54,7 +54,7 @@ if __name__ == '__main__':
         phi_next = np.zeros(N)
         phi_0[N//2:] = 1.0 
                 
-        phi_next, F, f = implicit_euler(phi_0, f_0, K, L, dt)
+        phi_next, F, f = run_sim(phi_0, f_0, K, L, dt)
         
         
         #Plot 1

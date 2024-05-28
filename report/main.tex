@@ -23,7 +23,7 @@
 
 
 
-\Large \textbf{Supervision: }
+\Large \textbf{Supervision: Dr. Frank Wendler }
 \end{center}
 
 \thispagestyle{empty}
@@ -46,7 +46,7 @@ To simulate a 1D single-component solidification we utilize the following energy
 	F = \int \bigl( f_{0} \phi^{2}(1- \phi)^{2}  + \frac{K_{\phi}}{2} \lvert \nabla \phi \rvert ^{2} \bigr) d \vec{r}
 \end{equation}
 
-As soldification is a a non-conservative process, the kinetics are governed by the Allen-Cahn equation (for the  homogeneous, isotropic case).
+As solidification is a a non-conservative process, the kinetics are governed by the Allen-Cahn equation (for the  homogeneous, isotropic case).
 
 \begin{equation}
 	\frac{\partial \phi}{\partial t} =-L \frac{\delta F}{\delta \phi} \label{eq:alle_cahn_homo_iso}
@@ -77,7 +77,7 @@ Inserting the result into eq. \ref{eq:alle_cahn_homo_iso} results in:
 	\frac{\partial \phi}{\partial t} = -L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr]
 \end{equation}
 
-As the governing equation for solving the PDE we apply Dirichlet boundary conditions \(\phi_{1} = 0; \phi_{n}=1\) and discretize the partial derivative \(\frac{\partial \phi}{\partial t}\) as:
+As the governing equation for solving the PDE we apply Neumann boundary conditions for the left \(\phi_{0} = \phi_{1}\) and the right side \(\phi_{n}= \phi_{n-1}\) and discretize the partial derivative \(\frac{\partial \phi}{\partial t}\) as:
 
 \begin{subequations}
 	\begin{align}
@@ -92,42 +92,46 @@ and \(\nabla^{2} \phi(x) \) is discretized according to the (forward) finite dif
 	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+2}) - 2\phi(x_{i+1}) + \phi(x_{i}) }{\Delta x^{2}} \label{eq:forward_euler_second_derivative}
 \end{equation}
 
-where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in \ref{fig:solidification_f0} \(f_{0}\) seems to be reciprocally proportional energy functional over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\), the energy or energy density - see fig. \ref{fig:solidification_L} .
+where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in fig. \ref{fig:solidification_f0} \(f_{0}\) seems to be reciprocally proportional energy functional over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\)-field, the energy or energy density - see fig. \ref{fig:solidification_L} .
 
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{solidification_initial.png}\label{fig:solidification_init}
+	\includegraphics[width=\textwidth]{solidification_initial.png}
 	\caption{Initial results of the 1D single-component solidification simulation.}
+	\label{fig:solidification_init}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{solidification_vary_f0.png}\label{fig:solidification_f0}
+	\includegraphics[width=\textwidth]{solidification_vary_f0.png}
 	\caption{Results of the 1D single-component solidification simulation with various \(f_{0}\) values.}
+	\label{fig:solidification_f0}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{solidification_vary_K.png}\label{fig:solidification_K}
+	\includegraphics[width=\textwidth]{solidification_vary_K.png}
 	\caption{Results of the 1D single-component solidification simulation with various K values.}
+	\label{fig:solidification_K}
 \end{figure}
 
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{solidification_vary_L.png}\label{fig:solidification_L}
+	\includegraphics[width=\textwidth]{solidification_vary_L.png}
 	\caption{Results of the 1D single-component solidification simulation with various L values.}
+	\label{fig:solidification_L}
 \end{figure}
 
 \section{Task 2: Determination of \(f_{0}\)}
-The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma}^{e}\) has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase \(c_{\gamma '}^{e}\) has been determined to be 0.230 \cite{zhu2002}. The bulk energy density function is constructed as:
+The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma}^{e}\) has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase \(c_{\gamma '}^{e}\) has been determined to be 0.230 - which is shown in fig. \ref{fig:AlNi_gibbs} \cite{zhu2002}. The bulk energy density function is constructed as:
 
 \begin{equation}
 	f_{bulk} = f_{0} (c_{\gamma '}^{e} - c)^{2}(c_{\gamma}^{e} - c)^{2} \label{eq:f_bulk_NiAl}
 \end{equation}
 
-The \( f_{0}\) needs to be fitted so that it results in an energy gradient of \(\Delta f 149 \frac{\mathrm{J}}{\mathrm{mol}} \) \cite{zaisera}. This is accomplished by choosing the right \(f_{0}\) to reach the right value at the local maximum of eq. \ref{eq:f_bulk_NiAl}. The local maximum of the function can be found automatically by finding the second root of the derivative of eq. \ref{eq:f_bulk_NiAl}:
+The \( f_{0}\) needs to be fitted so that it results in an energy gradient of \(\Delta f = 149 \frac{\mathrm{J}}{\mathrm{mol}} \) \cite{zaisera}. This is accomplished by choosing the right \(f_{0}\) to reach the right value at the local maximum of eq. \ref{eq:f_bulk_NiAl}. The local maximum of the function can be found automatically by finding the second root of the derivative of eq. \ref{eq:f_bulk_NiAl}:
 
 \begin{equation}
 	\frac{df_{bulk}}{dc} = -2 f_{0} (c_{\gamma '}^{e} - c)(c - c_{\gamma}^{e})^{2} + 2 f_{0} (c_{\gamma '}^{e} - c)^{2}(c - c_{\gamma}^{e})
@@ -137,14 +141,16 @@ Using the \code{scipy} package of Python this can be achieved using \code{scipy.
 
 
 \begin{figure}[htb]
-	\centering\includegraphics[width=\textwidth]{NiAl_gibbs_free_energy.png}\label{fig:AlNi_gibbs}
-	\caption{Calculated chemical free energy as a function of composition for both the disordered and ordered phase at 1300 K reproduced from \cite{zhu2002}.} 
+	\centering\includegraphics[width=0.5\textwidth]{NiAl_gibbs_free_energy.png}
+	\caption{Calculated chemical free energy as a function of composition for both the disordered and ordered phase at 1300 K reproduced from \cite{zhu2002}.}
+	\label{fig:AlNi_gibbs}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
-	\includegraphics[width=\textwidth]{alni_fitted.png}\label{fig:alni_fitted}
+	\includegraphics[width=\textwidth]{alni_fitted.png}
 	\caption{Plot of bulk energy of binary NiAl mixture with \(c_{\gamma}^{e} = 0.165\),  \(c_{\gamma '}^{e} = 0.23\) and \(f_{0} = 133.6 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}} \).}
+	\label{fig:alni_fitted}
 \end{figure}
 
 \section{Task 3: Determination of \(K_{c}\) }
@@ -162,11 +168,12 @@ The functional for the binary system is evaluated as follows:
 		
 \(\nabla^{2}(\cdot)\) is (both in eq. \ref{eq:functional_NiAl} and eq. \ref{eq:cahn_hillard}) is discretized as in sec. \ref{sec:task1} eq. \ref{eq:forward_euler_second_derivative}.  The following coefficients are used molar Volumen \(V_{m} = 10^{-5} \frac{m^{3}}{mol}\), interface mobility \(M = 10^{-17} \frac{mol^{2}}{J m s}\), length segment \(dx = 10^{-8} m\), \(f_{0} = 134 \cdot 10^{6} \frac{J}{mol}\) and a experimental interface energy of \( F_{inte} = 5 \sim 50 \cdot 10^{-3} \frac{J}{m}\). 
 
-As M is function of molar quantity of substance for calculating the energy we have to add define an adjusted \( M_{new} = M * V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{ine} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
+As M is function of molar quantity of substance for calculating the energy we have to add define an adjusted \( M_{new} = M V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{inte} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
 
 \begin{figure}[htb]
-	\includegraphics[width=\textwidth]{find_K_grad_energy_density.png} \label{fig:vary_K}
+	\includegraphics[width=\textwidth]{find_K_grad_energy_density.png} 
 	\caption{Results of the conserved binary NiAl-system simulation with various \(K_{c}\) values.}
+	\label{fig:vary_K}
 \end{figure}
 
 For expanding the calculation of the concentrations we need to implement eq. \ref{eq:forward_euler_second_derivative} in 2D:
@@ -175,12 +182,12 @@ For expanding the calculation of the concentrations we need to implement eq. \re
 	\nabla^{2} c_{i,j} = \frac{c_{i,j-1} + c_{i,j+1} - 4c_{i, j} + c_{i-1, j} + c_{i+1, j}}{\Delta x^{2}} 
 \end{equation}
 
-where the concentrations are mapped on a \(n \times n\)-Matrix. Running the simulation for 1000\(dt\) results in fig.  . Here we applied an initially random concentration with \(c_{init = 0.195}\) as a mean value for a gauss distributed matrix using the \code{numpy.random.normal(loc=0.195, scale=0.01, size=(N,N))} function. Over time we see, the distribution becomes smooth, while maintaining the composition of several domains of \(\gamma \\ \gamma '\)-Phases.
+where the concentrations are mapped on a \(n \times n\)-Matrix. Running the simulation for 1000\(dt\) results in fig. \ref{fig:NiAl_2D_heatmaps}. Here we applied an initially random concentration with \(c_{init} = 0.195\) as a mean value for a gauss distributed matrix using the \code{numpy.random.normal(loc=0.195, scale=0.1, size=(N,N))} function. Over time we see, the distribution becomes smooth, while maintaining the composition of several domains of \(\gamma \\ \gamma '\)-Phases.
 
 \begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{NiAl_2D.png} \label{fig:NiAl_2D_heatmaps}
+	\includegraphics[width=\textwidth]{NiAl_2D.png} 
 	\caption{Heatmaps of concentrations over time calculated by conserved phase-field method from an initially randomly distributed concentration map.}
+	\label{fig:NiAl_2D_heatmaps}
 \end{figure}
 
 

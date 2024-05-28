@@ -53,7 +53,7 @@ if __name__ == '__main__':
     # Plotting
     vmin = c1
     vmax = c2
-    fig, axs = plt.subplots(ncols=5, gridspec_kw={'width_ratios': [1, 1, 1, 1, 0.05]}, figsize=(25, 5))
+    fig, axs = plt.subplots(ncols=5, gridspec_kw={'width_ratios': [1, 1, 1, 1, 0.05]}, figsize=(40, 10))
     sns.heatmap(c_save_list[0], ax=axs[0], cbar=False, vmin=vmin, vmax=vmax) 
     sns.heatmap(c_save_list[1], ax=axs[1], cbar=False, vmin=vmin, vmax=vmax) 
     sns.heatmap(c_save_list[2], ax=axs[2], cbar=False, vmin=vmin, vmax=vmax) 
