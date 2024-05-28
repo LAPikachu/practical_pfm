@@ -32,7 +32,7 @@ dc_dt =  np.zeros((N,N), dtype=np.float64)
 def run_sim( f_0, K, M, dt, c1, c2):
     c_save_list = []
     t_save_list = []
-    c0 = np.random.normal(loc=0.195, scale=0.01, size=(N,N)) 
+    c0 = np.random.normal(loc=0.195, scale=0.1, size=(N,N)) 
     c_next = np.zeros((N,N), dtype=np.float64)
     for j in range(timesteps):
         dc_dt = f_0 * dbulk_dx(c0,c1, c2) - K * div_grad_2D(c0, dx)
@@ -51,8 +51,8 @@ if __name__ == '__main__':
     c_save_list, t_save_list = run_sim(f_0 = f_0, K = K, M=M, dt=dt, c1=c1, c2=c2)
 
     # Plotting
-    vmin = c1 +0.025
-    vmax = c2 -0.025
+    vmin = c1
+    vmax = c2
     fig, axs = plt.subplots(ncols=5, gridspec_kw={'width_ratios': [1, 1, 1, 1, 0.05]}, figsize=(25, 5))
     sns.heatmap(c_save_list[0], ax=axs[0], cbar=False, vmin=vmin, vmax=vmax) 
     sns.heatmap(c_save_list[1], ax=axs[1], cbar=False, vmin=vmin, vmax=vmax) 
