@@ -165,12 +165,23 @@ The functional for the binary system is evaluated as follows:
 As M is function of molar quantity of substance for calculating the energy we have to add define an adjusted \( M_{new} = M * V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{ine} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
 
 \begin{figure}[htb]
-	\centering
 	\includegraphics[width=\textwidth]{find_K_grad_energy_density.png} \label{fig:vary_K}
 	\caption{Results of the conserved binary NiAl-system simulation with various \(K_{c}\) values.}
 \end{figure}
 
+For expanding the calculation of the concentrations we need to implement eq. \ref{eq:forward_euler_second_derivative} in 2D:
 
+\begin{equation}
+	\nabla^{2} c_{i,j} = \frac{c_{i,j-1} + c_{i,j+1} - 4c_{i, j} + c_{i-1, j} + c_{i+1, j}}{\Delta x^{2}} 
+\end{equation}
+
+where the concentrations are mapped on a \(n \times n\)-Matrix. Running the simulation for 1000\(dt\) results in fig.  . Here we applied an initially random concentration with \(c_{init = 0.195}\) as a mean value for a gauss distributed matrix using the \code{numpy.random.normal(loc=0.195, scale=0.01, size=(N,N))} function. Over time we see, the distribution becomes smooth, while maintaining the composition of several domains of \(\gamma \\ \gamma '\)-Phases.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=\textwidth]{NiAl_2D.png} \label{fig:NiAl_2D_heatmaps}
+	\caption{Heatmaps of concentrations over time calculated by conserved phase-field method from an initially randomly distributed concentration map.}
+\end{figure}
 
 
 %\listoffigures
