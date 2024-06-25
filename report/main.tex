@@ -137,7 +137,7 @@ The \( f_{0}\) needs to be fitted so that it results in an energy gradient of \(
 	\frac{df_{bulk}}{dc} = -2 f_{0} (c_{\gamma '}^{e} - c)(c - c_{\gamma}^{e})^{2} + 2 f_{0} (c_{\gamma '}^{e} - c)^{2}(c - c_{\gamma}^{e})
 \end{equation}
 
-Using the \code{scipy} package of Python this can be achieved using \code{scipy.optimize.root\_scalar(func, x0=0.2)} where 0.2 is the initial starting point, looking for \(c_{max}\). Here \(c_{max}\) is found at 0.1975. Solving \ref{eq:f_bulk_NiAl} for \(f_{0}\) results in a value of \(\approx 133.6 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}}\).  The resulting function of the corresponding parameters is plotted in \ref{fig:alni_fitted}.
+Using the \code{scipy} package of Python this can be achieved using \code{scipy.optimize.root\_scalar(func, x0=0.2)} where 0.2 is the initial starting point, looking for \(c_{max}\). Here \(c_{max}\) is found at 0.1975. Solving \ref{eq:f_bulk_NiAl} for \(f_{0}\) results in a value of \(\approx 100.9 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}}\).  The resulting function of the corresponding parameters is plotted in \ref{fig:alni_fitted}.
 
 
 \begin{figure}[htb]
@@ -176,7 +176,7 @@ The functional for the binary system is evaluated as follows:
 		
 \(\nabla^{2}(\cdot)\) is (both in eq. \ref{eq:functional_NiAl} and eq. \ref{eq:cahn_hillard}) is discretized as in sec. \ref{sec:task1} eq. \ref{eq:central_euler_second_derivative}.  The following coefficients are used molar Volumen \(V_{m} = 10^{-5} \frac{m^{3}}{mol}\), interface mobility \(M = 10^{-17} \frac{mol^{2}}{J m s}\), length segment \(dx = 10^{-8} m\), \(f_{0} = 134 \cdot 10^{6} \frac{J}{mol}\) and a experimental interface energy of \( F_{inte} = 5 \sim 50 \cdot 10^{-3} \frac{J}{m}\). 
 
-As M is function of molar quantity of substance for calculating the energy we have to add define an adjusted \( M_{new} = M V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{inte} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
+As M is function of molar quantity of substance for calculating the energy we have to define an adjusted \( M_{new} = M V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{inte} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
 
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{find_K_grad_energy_density.png} 
