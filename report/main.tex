@@ -82,14 +82,14 @@ As the governing equation for solving the PDE we apply Neumann boundary conditio
 \begin{subequations}
 	\begin{align}
 	\frac{\partial \phi}{\partial t}  \approx \frac{\phi_{next} - \phi}{\Delta t} &=  -L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr] \Leftrightarrow \\
-	\Leftrightarrow \phi_{next} & = -\Delta t L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr]
+	\Leftrightarrow \phi_{next} & = \phi -\Delta t L \bigl[  f_0 ( 2\phi^{3} -4\phi^{2} + 2\phi) - K_{\phi} \nabla^{2} \phi \bigr]
     \end{align}
 \end{subequations}
 
-and \(\nabla^{2} \phi(x) \) is discretized according to the (forward) finite differences scheme:
+and \(\nabla^{2} \phi(x) \) is discretized according to the (central) finite differences scheme:
 
 \begin{equation}
-	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+2}) - 2\phi(x_{i+1}) + \phi(x_{i}) }{\Delta x^{2}} \label{eq:forward_euler_second_derivative}
+	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+1}) - 2\phi(x_{i}) + \phi(x_{i-1}) }{\Delta x^{2}} \label{eq:central_euler_second_derivative}
 \end{equation}
 
 where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in fig. \ref{fig:solidification_f0} \(f_{0}\) seems to be reciprocally proportional energy functional over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\)-field, the energy or energy density - see fig. \ref{fig:solidification_L} .
@@ -125,7 +125,7 @@ where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is t
 \end{figure}
 
 \section{Task 2: Determination of \(f_{0}\)}
-The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma}^{e}\) has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase \(c_{\gamma '}^{e}\) has been determined to be 0.230 - which is shown in fig. \ref{fig:AlNi_gibbs} \cite{zhu2002}. The bulk energy density function is constructed as:
+The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma}^{e}\) has been determined to be 0.165 and the  Al concentration of the ordered \(\gamma ' \)-Phase \(c_{\gamma '}^{e}\) has been determined to be 0.230 - which is shown in fig. \ref{fig:AlNi_gibbs} \cite{zhu2002}. This however clashes with the value that is shown in the problem statement \cite{zaisera} - which features the following fig. \ref{fig:AlNi_problem_statement}. For reasons of consistency we will assume \(c_{\gamma}^{e}\) to be 0.16 and \(c_{\gamma '}^{e}\) to be 0.23. The bulk energy density function is constructed as:
 
 \begin{equation}
 	f_{bulk} = f_{0} (c_{\gamma '}^{e} - c)^{2}(c_{\gamma}^{e} - c)^{2} \label{eq:f_bulk_NiAl}
@@ -147,11 +147,19 @@ Using the \code{scipy} package of Python this can be achieved using \code{scipy.
 \end{figure}
 
 \begin{figure}[htb]
+	\centering\includegraphics[width=0.5\textwidth]{alni_bulk_denergy_density_problem_statement.png}
+	\caption{Bulk energy density as a function of concentration of Al at 1300 K reproduced from \cite{zaisera}.}
+	\label{fig:AlNi_problem_statement}
+\end{figure}
+
+\begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{alni_fitted.png}
 	\caption{Plot of bulk energy of binary NiAl mixture with \(c_{\gamma}^{e} = 0.165\),  \(c_{\gamma '}^{e} = 0.23\) and \(f_{0} = 133.6 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}} \).}
 	\label{fig:alni_fitted}
 \end{figure}
+
+
 
 \section{Task 3: Determination of \(K_{c}\) }
 In this task the gradient energy density coefficient of a binary NiAl-system is calculated. Apart from the governing equation being the Cahn-Hillard equation (eq. \ref{eq:cahn_hillard} ) as we are dealing with a conserved field, the general algorithm is similar to sec. \ref{sec:task1}. 
@@ -166,7 +174,7 @@ The functional for the binary system is evaluated as follows:
 	\frac{\delta F}{\delta c} = 2 f_{0}(c_{\gamma '} - c )(c - c_{\gamma})^2 + 2 f_{0} (c - c_{\gamma})(c_{\gamma '} - c )^{2} - K_{c} \nabla^{2} c  \label{eq:functional_NiAl}
 \end{equation}
 		
-\(\nabla^{2}(\cdot)\) is (both in eq. \ref{eq:functional_NiAl} and eq. \ref{eq:cahn_hillard}) is discretized as in sec. \ref{sec:task1} eq. \ref{eq:forward_euler_second_derivative}.  The following coefficients are used molar Volumen \(V_{m} = 10^{-5} \frac{m^{3}}{mol}\), interface mobility \(M = 10^{-17} \frac{mol^{2}}{J m s}\), length segment \(dx = 10^{-8} m\), \(f_{0} = 134 \cdot 10^{6} \frac{J}{mol}\) and a experimental interface energy of \( F_{inte} = 5 \sim 50 \cdot 10^{-3} \frac{J}{m}\). 
+\(\nabla^{2}(\cdot)\) is (both in eq. \ref{eq:functional_NiAl} and eq. \ref{eq:cahn_hillard}) is discretized as in sec. \ref{sec:task1} eq. \ref{eq:central_euler_second_derivative}.  The following coefficients are used molar Volumen \(V_{m} = 10^{-5} \frac{m^{3}}{mol}\), interface mobility \(M = 10^{-17} \frac{mol^{2}}{J m s}\), length segment \(dx = 10^{-8} m\), \(f_{0} = 134 \cdot 10^{6} \frac{J}{mol}\) and a experimental interface energy of \( F_{inte} = 5 \sim 50 \cdot 10^{-3} \frac{J}{m}\). 
 
 As M is function of molar quantity of substance for calculating the energy we have to add define an adjusted \( M_{new} = M V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{inte} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
 
@@ -176,7 +184,7 @@ As M is function of molar quantity of substance for calculating the energy we ha
 	\label{fig:vary_K}
 \end{figure}
 
-For expanding the calculation of the concentrations we need to implement eq. \ref{eq:forward_euler_second_derivative} in 2D:
+For expanding the calculation of the concentrations we need to implement eq. \ref{eq:central_euler_second_derivative} in 2D:
 
 \begin{equation}
 	\nabla^{2} c_{i,j} = \frac{c_{i,j-1} + c_{i,j+1} - 4c_{i, j} + c_{i-1, j} + c_{i+1, j}}{\Delta x^{2}} 
