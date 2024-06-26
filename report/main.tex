@@ -92,7 +92,7 @@ and \(\nabla^{2} \phi(x) \) is discretized according to the (central) finite dif
 	\nabla^{2} \phi(x_{i}) \approx \frac{\phi(x_{i+1}) - 2\phi(x_{i}) + \phi(x_{i-1}) }{\Delta x^{2}} \label{eq:central_euler_second_derivative}
 \end{equation}
 
-where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in fig. \ref{fig:solidification_f0} \(f_{0}\) seems to be reciprocally proportional energy functional over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\)-field, the energy or energy density - see fig. \ref{fig:solidification_L} .
+where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is the node distance. The initial result is plotted in fig. \ref{fig:solidification_init}. As can be seen in fig. \ref{fig:solidification_f0} with decreasing \(f_{0}\) the total energy decreases faster over time. With decreasing value the transition region (where \(\phi\) changes from 0 to 1) becomes broader. The opposite effect can be observed in fig. \ref{fig:solidification_K} with variation of \(K_{\phi}\). Additional the energy density functional seems to become broader but only changes its peak value for increased K-values. L does not seem to have any influence on the \(\phi\)-field, the energy or energy density - see fig. \ref{fig:solidification_L} .
 
 
 \begin{figure}[htb]
@@ -105,14 +105,14 @@ where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is t
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{solidification_vary_f0.png}
-	\caption{Results of the 1D single-component solidification simulation with various \(f_{0}\) values.}
+	\caption{Results of the 1D single-component solidification simulation with various \(f_{0}\) values, with constant values K=0.1 and L = 1.}
 	\label{fig:solidification_f0}
 \end{figure}
 
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{solidification_vary_K.png}
-	\caption{Results of the 1D single-component solidification simulation with various K values.}
+	\caption{Results of the 1D single-component solidification simulation with various K values with constant values \(f_0 \) =1 and L = 1.}
 	\label{fig:solidification_K}
 \end{figure}
 
@@ -120,7 +120,7 @@ where \(x_{i}\) is the node at which the value is computed and \(\Delta x\) is t
 \begin{figure}[htb]
 	\centering
 	\includegraphics[width=\textwidth]{solidification_vary_L.png}
-	\caption{Results of the 1D single-component solidification simulation with various L values.}
+	\caption{Results of the 1D single-component solidification simulation with various L values with constant values K = 0.1 and \(f_0\) = 1.}
 	\label{fig:solidification_L}
 \end{figure}
 
@@ -131,13 +131,19 @@ The equilibrium Al concentration of the disordered \(\gamma \)-Phase \(c_{\gamma
 	f_{bulk} = f_{0} (c_{\gamma '}^{e} - c)^{2}(c_{\gamma}^{e} - c)^{2} \label{eq:f_bulk_NiAl}
 \end{equation}
 
-The \( f_{0}\) needs to be fitted so that it results in an energy gradient of \(\Delta f = 149 \frac{\mathrm{J}}{\mathrm{mol}} \) \cite{zaisera}. This is accomplished by choosing the right \(f_{0}\) to reach the right value at the local maximum of eq. \ref{eq:f_bulk_NiAl}. The local maximum of the function can be found automatically by finding the second root of the derivative of eq. \ref{eq:f_bulk_NiAl}:
+The \( f_{0}\) needs to be fitted so that it results in an energy barrier of \(\Delta f = 149 \frac{\mathrm{J}}{\mathrm{mol}} \) \cite{zaisera}. This is accomplished by choosing the right \(f_{0}\) to reach the right value at the local maximum of eq. \ref{eq:f_bulk_NiAl}. The local maximum of the function can be found automatically by finding the second root of the derivative of eq. \ref{eq:f_bulk_NiAl}:
 
 \begin{equation}
 	\frac{df_{bulk}}{dc} = -2 f_{0} (c_{\gamma '}^{e} - c)(c - c_{\gamma}^{e})^{2} + 2 f_{0} (c_{\gamma '}^{e} - c)^{2}(c - c_{\gamma}^{e})
 \end{equation}
 
-Using the \code{scipy} package of Python this can be achieved using \code{scipy.optimize.root\_scalar(func, x0=0.2)} where 0.2 is the initial starting point, looking for \(c_{max}\). Here \(c_{max}\) is found at 0.1975. Solving \ref{eq:f_bulk_NiAl} for \(f_{0}\) results in a value of \(\approx 100.9 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}}\).  The resulting function of the corresponding parameters is plotted in \ref{fig:alni_fitted}.
+Factoring out \(f_{0} (c_{\gamma '}^{e} - c)(c - c_{\gamma}^{e})\) to find the root of the function we are left with:
+
+\begin{equation}
+	c_{max} = \frac{1}{2} (c_{\gamma}^{e} + c_{\gamma '}^{e})
+\end{equation}
+
+ Here \(c_{max}\) is found at 0.195. Solving \ref{eq:f_bulk_NiAl} for \(f_{0}\) results in a value of \(\approx 100.9 \cdot 10^{6} \frac{\mathrm{J}}{\mathrm{mol}}\).  The resulting function of the corresponding parameters is plotted in \ref{fig:alni_fitted}.
 
 
 \begin{figure}[htb]
@@ -176,7 +182,7 @@ The functional for the binary system is evaluated as follows:
 		
 \(\nabla^{2}(\cdot)\) is (both in eq. \ref{eq:functional_NiAl} and eq. \ref{eq:cahn_hillard}) is discretized as in sec. \ref{sec:task1} eq. \ref{eq:central_euler_second_derivative}.  The following coefficients are used molar Volumen \(V_{m} = 10^{-5} \frac{m^{3}}{mol}\), interface mobility \(M = 10^{-17} \frac{mol^{2}}{J m s}\), length segment \(dx = 10^{-8} m\), \(f_{0} = 134 \cdot 10^{6} \frac{J}{mol}\) and a experimental interface energy of \( F_{inte} = 5 \sim 50 \cdot 10^{-3} \frac{J}{m}\). 
 
-As M is function of molar quantity of substance for calculating the energy we have to define an adjusted \( M_{new} = M V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. Printing the energies alongside the \(K_{c}\) values shows that to achieve \(F_{inte} < 0.5 \frac{J}{mol}\) we need to use \(K_{c} < 3.5 \cdot 10^{-6} \frac{J}{m}\).
+As M is function of molar quantity of substance for calculating the energy we have to define an adjusted \( M_{new} = M V_{m}^{2}\). Running the simulation for various values of \(K_{c}\) results in fig. \ref{fig:vary_K}. The total energies F are calculated, by applying the \code{numpy.trapz} method - integrating \(f_{inte}\) over x.  Printing the energies alongside the \(K_{c}\) values shows that \( 1. 0 \cdot 10^{-6} < K_{c} < 1.0 \cdot 10^{-7} \frac{J}{m}\) produced results in the experimentally observed Range of \( 0.05 < F_{inte} < 0.5 \frac{J}{mol}\).
 
 \begin{figure}[htb]
 	\includegraphics[width=\textwidth]{find_K_grad_energy_density.png} 
@@ -190,12 +196,25 @@ For expanding the calculation of the concentrations we need to implement eq. \re
 	\nabla^{2} c_{i,j} = \frac{c_{i,j-1} + c_{i,j+1} - 4c_{i, j} + c_{i-1, j} + c_{i+1, j}}{\Delta x^{2}} 
 \end{equation}
 
-where the concentrations are mapped on a \(n \times n\)-Matrix. Running the simulation for 1000\(dt\) results in fig. \ref{fig:NiAl_2D_heatmaps}. Here we applied an initially random concentration with \(c_{init} = 0.195\) as a mean value for a gauss distributed matrix using the \code{numpy.random.normal(loc=0.195, scale=0.1, size=(N,N))} function. Over time we see, the distribution becomes smooth, while maintaining the composition of several domains of \(\gamma \\ \gamma '\)-Phases.
+where the concentrations are mapped on a \(n \times n\)-Matrix. Running the simulation for 1000\(dt\) results in fig. \ref{fig:NiAl_2D_heatmaps} and . Here we applied an initially random concentration with \(c_{init} = 0.195\) as a mean value for a gauss distributed matrix using the \code{numpy.random.normal(loc=0.195, scale=0.1, size=(N,N))} function. Choosing unfitting K values (i.e.\(3 \cdot ^{-5}\)) we see that the formation of domains does not occur - fig. 
+ \ref{fig:NiAl_2D_heatmaps_K3e-5}. While for the K value \(1 \cdot ^{-6}\))   over time we see, the development of several domains of \(\gamma \\ \gamma '\)-Phases - fig. \ref{fig:NiAl_2D_heatmaps}. For smaller values like \(10^{-7}\) the domains become thinner, and less pronounced \ref{fig:NiAl_2D_heatmaps_K1e-7}.
 
-\begin{figure}
-	\includegraphics[width=\textwidth]{NiAl_2D.png} 
-	\caption{Heatmaps of concentrations over time calculated by conserved phase-field method from an initially randomly distributed concentration map.}
+\begin{figure}[htb]
+	\includegraphics[width=\textwidth]{NiAl_2D_K_3e-5.png} 
+	\caption{Heatmaps of concentrations over time calculated by conserved phase-field method from an initially randomly distributed concentration map with a K value of \(3 \cdot ^{-5}\).}
+	\label{fig:NiAl_2D_heatmaps_K3e-5}
+\end{figure}
+
+\begin{figure}[htb]
+	\includegraphics[width=\textwidth]{NiAl_2D_K1e-6.png} 
+	\caption{Heatmaps of concentrations over time calculated by conserved phase-field method from an initially randomly distributed concentration map with a K value of \(10^{-6}\).}
 	\label{fig:NiAl_2D_heatmaps}
+\end{figure}
+
+\begin{figure}[htb]
+	\includegraphics[width=\textwidth]{NiAl_2D_K1e-7.png} 
+	\caption{Heatmaps of concentrations over time calculated by conserved phase-field method from an initially randomly distributed concentration map with a K value of \(10^{-7}\).}
+	\label{fig:NiAl_2D_heatmaps_K1e-7}
 \end{figure}
 
 
