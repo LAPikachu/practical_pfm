@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  25 JUN 2024 13:03
+This is pdfTeX, Version 3.141592653-2.6-1.40.25 (MiKTeX 24.1) (preloaded format=pdflatex 2024.2.5)  26 JUN 2024 15:43
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -2280,27 +2280,11 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `subscript' on input line 127.
 
-LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
-40.
-(C:\Users\Leon\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
-File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
-)
-Package microtype Info: Loading generic protrusion settings for font family
-(microtype)             `lmtt' (encoding: T1).
-(microtype)             For optimal results, create family-specific settings.
-(microtype)             See the microtype manual for details.
-
-Overfull \hbox (48.6201pt too wide) in paragraph at lines 140--141
-[]\T1/lmr/m/n/10.95 (-20) Using the \T1/lmtt/m/n/10.95 scipy \T1/lmr/m/n/10.95 
-(-20) pack-age of Python this can be achieved us-ing \T1/lmtt/m/n/10.95 scipy.o
-ptimize.root_scalar(func,
- []
-
 <graphics/NiAl_gibbs_free_energy.png, id=103, 2192.19pt x 1955.80687pt>
 File: graphics/NiAl_gibbs_free_energy.png Graphic file (type png)
 <use graphics/NiAl_gibbs_free_energy.png>
 Package pdftex.def Info: graphics/NiAl_gibbs_free_energy.png  used on input lin
-e 144.
+e 150.
 (pdftex.def)             Requested size: 209.12683pt x 186.54967pt.
 <graphics/alni_bulk_denergy_density_problem_statement.png, id=106, 244.66406pt 
 x 158.09062pt>
@@ -2308,12 +2292,12 @@ File: graphics/alni_bulk_denergy_density_problem_statement.png Graphic file (ty
 pe png)
 <use graphics/alni_bulk_denergy_density_problem_statement.png>
 Package pdftex.def Info: graphics/alni_bulk_denergy_density_problem_statement.p
-ng  used on input line 150.
+ng  used on input line 156.
 (pdftex.def)             Requested size: 209.12683pt x 135.13028pt.
 <graphics/alni_fitted.png, id=109, 462.528pt x 346.896pt>
 File: graphics/alni_fitted.png Graphic file (type png)
 <use graphics/alni_fitted.png>
-Package pdftex.def Info: graphics/alni_fitted.png  used on input line 157.
+Package pdftex.def Info: graphics/alni_fitted.png  used on input line 163.
 (pdftex.def)             Requested size: 418.25368pt x 313.70677pt.
 [5
 
@@ -2321,30 +2305,53 @@ Package pdftex.def Info: graphics/alni_fitted.png  used on input line 157.
 ity_problem_statement.png>] [7 <./graphics/alni_fitted.png>]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `math shift' on input line 164.
+(hyperref)                removing `math shift' on input line 170.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
-(hyperref)                removing `subscript' on input line 164.
+(hyperref)                removing `subscript' on input line 170.
 
+LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 1
+85.
+(C:\Users\Leon\AppData\Local\Programs\MiKTeX\tex/latex/lm\t1lmtt.fd
+File: t1lmtt.fd 2015/05/01 v1.6.1 Font defs for Latin Modern
+)
+Package microtype Info: Loading generic protrusion settings for font family
+(microtype)             `lmtt' (encoding: T1).
+(microtype)             For optimal results, create family-specific settings.
+(microtype)             See the microtype manual for details.
 <graphics/find_K_grad_energy_density.png, id=142, 1084.05pt x 361.35pt>
 File: graphics/find_K_grad_energy_density.png Graphic file (type png)
 <use graphics/find_K_grad_energy_density.png>
 Package pdftex.def Info: graphics/find_K_grad_energy_density.png  used on input
- line 182.
+ line 188.
 (pdftex.def)             Requested size: 418.25368pt x 139.41516pt.
-[8
+ [8
 
  <./graphics/find_K_grad_energy_density.png>]
-<graphics/NiAl_2D.png, id=155, 2890.8pt x 722.7pt>
-File: graphics/NiAl_2D.png Graphic file (type png)
-<use graphics/NiAl_2D.png>
-Package pdftex.def Info: graphics/NiAl_2D.png  used on input line 196.
+<graphics/NiAl_2D_K_3e-5.png, id=158, 2890.8pt x 722.7pt>
+File: graphics/NiAl_2D_K_3e-5.png Graphic file (type png)
+<use graphics/NiAl_2D_K_3e-5.png>
+Package pdftex.def Info: graphics/NiAl_2D_K_3e-5.png  used on input line 203.
 (pdftex.def)             Requested size: 418.25368pt x 104.56274pt.
+<graphics/NiAl_2D_K1e-6.png, id=159, 1779.2874pt x 683.6742pt>
+File: graphics/NiAl_2D_K1e-6.png Graphic file (type png)
+<use graphics/NiAl_2D_K1e-6.png>
+Package pdftex.def Info: graphics/NiAl_2D_K1e-6.png  used on input line 209.
+(pdftex.def)             Requested size: 418.25368pt x 160.70518pt.
+<graphics/NiAl_2D_K1e-7.png, id=160, 1779.2874pt x 683.6742pt>
+File: graphics/NiAl_2D_K1e-7.png Graphic file (type png)
+<use graphics/NiAl_2D_K1e-7.png>
+Package pdftex.def Info: graphics/NiAl_2D_K1e-7.png  used on input line 215.
+(pdftex.def)             Requested size: 418.25368pt x 160.70518pt.
+ [9 <./graphics/NiAl_2D_K_3e-5.png>]
+[10 <./graphics/NiAl_2D_K1e-6.png> <./graphics/NiAl_2D_K1e-7.png>]
 Package microtype Info: Character `029' is missing
 (microtype)             in font `T1/lmr/m/sc/10.95'.
 (microtype)             Ignoring protrusion settings for this character.
- [9 <./graphics/NiAl_2D.png>]
+ [11
+
+]
 (main.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -2357,13 +2364,13 @@ Package logreq Info: Writing requests to 'main.run.xml'.
 
  ) 
 Here is how much of TeX's memory you used:
- 45846 strings out of 474542
- 905627 string characters out of 5744919
+ 45877 strings out of 474542
+ 906405 string characters out of 5744919
  1939978 words of memory out of 5000000
- 67230 multiletter control sequences out of 15000+600000
- 637651 words of font info for 172 fonts, out of 8000000 for 9000
+ 67250 multiletter control sequences out of 15000+600000
+ 637900 words of font info for 175 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 113i,20n,110p,11002b,2125s stack positions out of 10000i,1000n,20000p,200000b,200000s
+ 113i,21n,110p,11002b,2125s stack positions out of 10000i,1000n,20000p,200000b,200000s
 <C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsymbol/MnSy
 mbol10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/mnsy
 mbol/MnSymbol6.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/pub
@@ -2383,9 +2390,9 @@ ic/lm/lmr17.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public
 ri10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lms
 sbx10.pfb><C:/Users/Leon/AppData/Local/Programs/MiKTeX/fonts/type1/public/lm/lm
 tt10.pfb>
-Output written on main.pdf (10 pages, 1070961 bytes).
+Output written on main.pdf (12 pages, 1165589 bytes).
 PDF statistics:
- 285 PDF objects out of 1000 (max. 8388607)
- 45 named destinations out of 1000 (max. 500000)
- 39519 words of extra memory for PDF output out of 42996 (max. 10000000)
+ 304 PDF objects out of 1000 (max. 8388607)
+ 50 named destinations out of 1000 (max. 500000)
+ 39529 words of extra memory for PDF output out of 42996 (max. 10000000)
 

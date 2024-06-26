@@ -6,7 +6,7 @@ def grad_1D(x, dx):
     tmp[1:-1] = x[2:] - x[:-2] 
     return tmp/dx
 
-def div_grad_1D(x, dx):
+def div_grad_1D(x, dx): # evil! (for some reason)
     tmp = np.copy(x)
     tmp[1:-1] = (x[:-2] + x[2:] - 2 * x[1:-1])
     return tmp/dx**2
